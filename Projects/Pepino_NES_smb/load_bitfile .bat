@@ -1,2 +1,2 @@
-tools\fpgaprog -v -f nes_top_smb_mb.bit
+tools\fpgaprog -v -f tools\nes_top_smb_mb.bit
 pause
