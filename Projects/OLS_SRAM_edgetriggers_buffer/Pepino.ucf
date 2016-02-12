@@ -1,0 +1,206 @@
+##################################################################################
+## la.ucf
+##
+## Author: Michael "Mr. Sump" Poppitz
+##
+## Details: http://sump.org/projects/analyzer/
+##
+## Contains assignment and iostandard information for
+## all used pins as well as timing and area constraints.
+##
+## MODIFIED for use of Xilinx Spartan 3e Starter Kit
+## MODIFIED for use with ButterFly Platform S3E Cocoon
+## MODIFIED for use with Logic Sniffer
+## MODIFIED for use with Pipistrello LX45
+## MODIFIED for use with Pepino
+## Visit www.GadgetFactory.net or www.dangerousprototypes.com for more information
+##################################################################################
+
+CONFIG VCCAUX = "3.3" ;
+
+# Crystal Clock - use 50MHz onboard oscillator
+NET "bf_clock" IOSTANDARD = LVCMOS33;
+NET "bf_clock" LOC = "J16";
+NET "bf_clock" TNM_NET = "bf_clock";
+TIMESPEC TS_bf_clock = PERIOD "bf_clock" 20.00 ns HIGH 50%;
+PIN "pll_wrapper/DCM_baseClock.CLK2X" TNM = "coreclk";
+
+# external Clock
+NET "extClockIn" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "extClockIn" LOC = C10;
+NET "extClockIn" TNM_NET = "extClockIn";
+TIMESPEC TS_extClockIn = PERIOD "extClockIn" 10 ns HIGH 50%;
+
+# extTriggerIn
+NET "extTriggerIn" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "extTriggerIn" LOC = A14;
+NET "extTriggerIn" OFFSET = IN 7 ns VALID 9 ns BEFORE "bf_clock" RISING;
+
+# DIR low = input
+NET "ch1_dir" LOC = D9 | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+NET "ch2_dir" LOC = C8 | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+# EN active low
+NET "ch1_en" LOC = D8 | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+NET "ch2_en" LOC = F9 | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+# indata[0-15]
+NET "indata[0]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[0]" SLEW = FAST;
+NET "indata[0]" DRIVE = 8;
+NET "indata[0]" LOC = N5;
+NET "indata[1]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[1]" SLEW = FAST;
+NET "indata[1]" DRIVE = 8;
+NET "indata[1]" LOC = M6;
+NET "indata[2]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[2]" SLEW = FAST;
+NET "indata[2]" DRIVE = 8;
+NET "indata[2]" LOC = P7;
+NET "indata[3]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[3]" SLEW = FAST;
+NET "indata[3]" DRIVE = 8;
+NET "indata[3]" LOC = P8;
+NET "indata[4]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[4]" SLEW = FAST;
+NET "indata[4]" DRIVE = 8;
+NET "indata[4]" LOC = R9;
+NET "indata[5]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[5]" SLEW = FAST;
+NET "indata[5]" DRIVE = 8;
+NET "indata[5]" LOC = M9;
+NET "indata[6]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[6]" SLEW = FAST;
+NET "indata[6]" DRIVE = 8;
+NET "indata[6]" LOC = L10;
+NET "indata[7]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[7]" SLEW = FAST;
+NET "indata[7]" DRIVE = 8;
+NET "indata[7]" LOC = R14;
+NET "indata[8]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[8]" SLEW = FAST;
+NET "indata[8]" DRIVE = 8;
+NET "indata[8]" LOC = P5;
+NET "indata[9]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[9]" SLEW = FAST;
+NET "indata[9]" DRIVE = 8;
+NET "indata[9]" LOC = N6;
+NET "indata[10]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[10]" SLEW = FAST;
+NET "indata[10]" DRIVE = 8;
+NET "indata[10]" LOC = M7;
+NET "indata[11]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[11]" SLEW = FAST;
+NET "indata[11]" DRIVE = 8;
+NET "indata[11]" LOC = T8;
+NET "indata[12]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[12]" SLEW = FAST;
+NET "indata[12]" DRIVE = 8;
+NET "indata[12]" LOC = T9;
+NET "indata[13]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[13]" SLEW = FAST;
+NET "indata[13]" DRIVE = 8;
+NET "indata[13]" LOC = N8;
+NET "indata[14]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[14]" SLEW = FAST;
+NET "indata[14]" DRIVE = 8;
+NET "indata[14]" LOC = M10;
+NET "indata[15]" IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "indata[15]" SLEW = FAST;
+NET "indata[15]" DRIVE = 8;
+NET "indata[15]" LOC = T15;
+
+
+# triggerLED mapped to LED 1
+NET "triggerLED" IOSTANDARD = LVCMOS33;
+NET "triggerLED" SLEW = SLOW;
+NET "triggerLED" DRIVE = 12;
+NET "triggerLED" LOC = N16;
+
+# armLED mapped to LED 2
+NET "armLED" IOSTANDARD = LVCMOS33;
+NET "armLED" SLEW = SLOW;
+NET "armLED" DRIVE = 12;
+NET "armLED" LOC = N14;
+
+# dataReady mapped to LED 3
+NET "dataReady" IOSTANDARD = LVCMOS33;
+NET "dataReady" SLEW = SLOW;
+NET "dataReady" DRIVE = 12;
+NET "dataReady" LOC = M14;
+
+# breathLED mapped to LED 4
+NET "breathLED" IOSTANDARD = LVCMOS33;
+NET "breathLED" SLEW = SLOW;
+NET "breathLED" DRIVE = 12;
+NET "breathLED" LOC = M13;
+
+## RS232
+NET "rx" IOSTANDARD = LVCMOS33;
+NET "rx" LOC = "B15";
+NET "tx" IOSTANDARD = LVCMOS33;
+NET "tx" LOC = "B16";
+
+# SRAM
+NET "_sramCE0" LOC = "H4" | IOSTANDARD=LVCMOS33;
+NET "_sramCE1" LOC = "J4" | IOSTANDARD=LVCMOS33;
+NET "_sramWE" LOC = "J1" | IOSTANDARD=LVCMOS33;
+NET "_sramOE" LOC = "B6" | IOSTANDARD=LVCMOS33;
+NET "_sramDS[0]" LOC = "B3" | IOSTANDARD=LVCMOS33;
+NET "_sramDS[1]" LOC = "C3" | IOSTANDARD=LVCMOS33;
+NET "_sramDS[2]" LOC = "R1" | IOSTANDARD=LVCMOS33;
+NET "_sramDS[3]" LOC = "R2" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[0]" LOC = "E3" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[1]" LOC = "E4" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[2]" LOC = "F3" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[3]" LOC = "F4" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[4]" LOC = "H3" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[5]" LOC = "J3" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[6]" LOC = "L4" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[7]" LOC = "L5" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[8]" LOC = "K1" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[9]" LOC = "K2" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[10]" LOC = "D5" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[11]" LOC = "C5" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[12]" LOC = "A4" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[13]" LOC = "B5" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[14]" LOC = "A5" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[15]" LOC = "A6" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[16]" LOC = "C7" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[17]" LOC = "A7" | IOSTANDARD=LVCMOS33;
+NET "sramAddr[18]" LOC = "D6" | IOSTANDARD=LVCMOS33;
+NET "sramData[0]" LOC = "E1" | IOSTANDARD=LVCMOS33;
+NET "sramData[1]" LOC = "E2" | IOSTANDARD=LVCMOS33;
+NET "sramData[2]" LOC = "F1" | IOSTANDARD=LVCMOS33;
+NET "sramData[3]" LOC = "F2" | IOSTANDARD=LVCMOS33;
+NET "sramData[4]" LOC = "G1" | IOSTANDARD=LVCMOS33;
+NET "sramData[5]" LOC = "G3" | IOSTANDARD=LVCMOS33;
+NET "sramData[6]" LOC = "H1" | IOSTANDARD=LVCMOS33;
+NET "sramData[7]" LOC = "H2" | IOSTANDARD=LVCMOS33;
+NET "sramData[8]" LOC = "A3" | IOSTANDARD=LVCMOS33;
+NET "sramData[9]" LOC = "A2" | IOSTANDARD=LVCMOS33;
+NET "sramData[10]" LOC = "B1" | IOSTANDARD=LVCMOS33;
+NET "sramData[11]" LOC = "B2" | IOSTANDARD=LVCMOS33;
+NET "sramData[12]" LOC = "C1" | IOSTANDARD=LVCMOS33;
+NET "sramData[13]" LOC = "C2" | IOSTANDARD=LVCMOS33;
+NET "sramData[14]" LOC = "D1" | IOSTANDARD=LVCMOS33;
+NET "sramData[15]" LOC = "D3" | IOSTANDARD=LVCMOS33;
+NET "sramData[16]" LOC = "P4" | IOSTANDARD=LVCMOS33;
+NET "sramData[17]" LOC = "T4" | IOSTANDARD=LVCMOS33;
+NET "sramData[18]" LOC = "R5" | IOSTANDARD=LVCMOS33;
+NET "sramData[19]" LOC = "T5" | IOSTANDARD=LVCMOS33;
+NET "sramData[20]" LOC = "P6" | IOSTANDARD=LVCMOS33;
+NET "sramData[21]" LOC = "T6" | IOSTANDARD=LVCMOS33;
+NET "sramData[22]" LOC = "R7" | IOSTANDARD=LVCMOS33;
+NET "sramData[23]" LOC = "T7" | IOSTANDARD=LVCMOS33;
+NET "sramData[24]" LOC = "L1" | IOSTANDARD=LVCMOS33;
+NET "sramData[25]" LOC = "L3" | IOSTANDARD=LVCMOS33;
+NET "sramData[26]" LOC = "M1" | IOSTANDARD=LVCMOS33;
+NET "sramData[27]" LOC = "M2" | IOSTANDARD=LVCMOS33;
+NET "sramData[28]" LOC = "N1" | IOSTANDARD=LVCMOS33;
+NET "sramData[29]" LOC = "N3" | IOSTANDARD=LVCMOS33;
+NET "sramData[30]" LOC = "P1" | IOSTANDARD=LVCMOS33;
+NET "sramData[31]" LOC = "P2" | IOSTANDARD=LVCMOS33;
+
+## Add jitter uncertainy to clock...
+SYSTEM_JITTER = 0.2 ns;

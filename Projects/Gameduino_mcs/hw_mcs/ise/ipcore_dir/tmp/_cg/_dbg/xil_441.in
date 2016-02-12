@@ -1,0 +1,120 @@
+SET_FLAG DEBUG FALSE
+SET_FLAG MODE INTERACTIVE
+SET_FLAG STANDALONE_MODE FALSE
+SET_PREFERENCE devicefamily spartan6
+SET_PREFERENCE device xc6slx45
+SET_PREFERENCE speedgrade -3
+SET_PREFERENCE package csg324
+SET_PREFERENCE verilogsim true
+SET_PREFERENCE vhdlsim false
+SET_PREFERENCE simulationfiles Structural
+SET_PREFERENCE busformat BusFormatAngleBracketNotRipped
+SET_PREFERENCE outputdirectory J:/Documents/Projects/Pipistrello_v2.0/gameduino/hw/ise/ipcore_dir/
+SET_PREFERENCE workingdirectory J:/Documents/Projects/Pipistrello_v2.0/gameduino/hw/ise/ipcore_dir/tmp/
+SET_PREFERENCE subworkingdirectory J:/Documents/Projects/Pipistrello_v2.0/gameduino/hw/ise/ipcore_dir/tmp/_cg/
+SET_PREFERENCE transientdirectory J:/Documents/Projects/Pipistrello_v2.0/gameduino/hw/ise/ipcore_dir/tmp/_cg/_dbg/
+SET_PREFERENCE designentry Verilog
+SET_PREFERENCE flowvendor Other
+SET_PREFERENCE addpads false
+SET_PREFERENCE projectname coregen
+SET_PREFERENCE formalverification false
+SET_PREFERENCE asysymbol false
+SET_PREFERENCE implementationfiletype Ngc
+SET_PREFERENCE foundationsym false
+SET_PREFERENCE createndf false
+SET_PREFERENCE removerpms false
+SET_PARAMETER JTAG_CHAIN USER2
+SET_PARAMETER MICROBLAZE_INSTANCE microblaze_mcs_v1_3
+SET_PARAMETER PATH mcs_0
+SET_PARAMETER FREQ 100.0
+SET_PARAMETER DEBUG_ENABLED false
+SET_PARAMETER TRACE false
+SET_PARAMETER MEMSIZE 64KB
+SET_PARAMETER USE_IO_BUS true
+SET_PARAMETER USE_UART_RX false
+SET_PARAMETER USE_UART_TX false
+SET_PARAMETER UART_BAUDRATE 9600
+SET_PARAMETER UART_PROG_BAUDRATE false
+SET_PARAMETER UART_DATA_BITS 8
+SET_PARAMETER UART_USE_PARITY false
+SET_PARAMETER UART_ODD_PARITY Even
+SET_PARAMETER UART_RX_INTERRUPT false
+SET_PARAMETER UART_TX_INTERRUPT false
+SET_PARAMETER UART_ERROR_INTERRUPT false
+SET_PARAMETER USE_FIT1 false
+SET_PARAMETER FIT1_No_CLOCKS 6216
+SET_PARAMETER FIT1_INTERRUPT false
+SET_PARAMETER USE_FIT2 false
+SET_PARAMETER FIT2_No_CLOCKS 6216
+SET_PARAMETER FIT2_INTERRUPT false
+SET_PARAMETER USE_FIT3 false
+SET_PARAMETER FIT3_No_CLOCKS 6216
+SET_PARAMETER FIT3_INTERRUPT false
+SET_PARAMETER USE_FIT4 false
+SET_PARAMETER FIT4_No_CLOCKS 6216
+SET_PARAMETER FIT4_INTERRUPT false
+SET_PARAMETER USE_PIT1 false
+SET_PARAMETER PIT1_SIZE 32
+SET_PARAMETER PIT1_READABLE true
+SET_PARAMETER PIT1_PRESCALER None
+SET_PARAMETER PIT1_INTERRUPT false
+SET_PARAMETER USE_PIT2 false
+SET_PARAMETER PIT2_SIZE 32
+SET_PARAMETER PIT2_READABLE true
+SET_PARAMETER PIT2_PRESCALER None
+SET_PARAMETER PIT2_INTERRUPT false
+SET_PARAMETER USE_PIT3 false
+SET_PARAMETER PIT3_SIZE 32
+SET_PARAMETER PIT3_READABLE true
+SET_PARAMETER PIT3_PRESCALER None
+SET_PARAMETER PIT3_INTERRUPT false
+SET_PARAMETER USE_PIT4 false
+SET_PARAMETER PIT4_SIZE 32
+SET_PARAMETER PIT4_READABLE true
+SET_PARAMETER PIT4_PRESCALER None
+SET_PARAMETER PIT4_INTERRUPT false
+SET_PARAMETER USE_GPO1 false
+SET_PARAMETER GPO1_SIZE 32
+SET_PARAMETER GPO1_INIT 0x00000000
+SET_PARAMETER USE_GPO2 false
+SET_PARAMETER GPO2_SIZE 32
+SET_PARAMETER GPO2_INIT 0x00000000
+SET_PARAMETER USE_GPO3 false
+SET_PARAMETER GPO3_SIZE 32
+SET_PARAMETER GPO3_INIT 0x00000000
+SET_PARAMETER USE_GPO4 false
+SET_PARAMETER GPO4_SIZE 32
+SET_PARAMETER GPO4_INIT 0x00000000
+SET_PARAMETER USE_GPI1 false
+SET_PARAMETER GPI1_SIZE 32
+SET_PARAMETER GPI1_INTERRUPT false
+SET_PARAMETER USE_GPI2 false
+SET_PARAMETER GPI2_SIZE 32
+SET_PARAMETER GPI2_INTERRUPT false
+SET_PARAMETER USE_GPI3 false
+SET_PARAMETER GPI3_SIZE 32
+SET_PARAMETER GPI3_INTERRUPT false
+SET_PARAMETER USE_GPI4 false
+SET_PARAMETER GPI4_SIZE 32
+SET_PARAMETER GPI4_INTERRUPT false
+SET_PARAMETER INTC_USE_EXT_INTR false
+SET_PARAMETER INTC_INTR_SIZE 1
+SET_PARAMETER INTC_LEVEL_EDGE 0x0000
+SET_PARAMETER INTC_POSITIVE 0xFFFF
+SET_PARAMETER Component_Name microblaze_mcs_v1_3
+SET_CORE_NAME MicroBlaze MCS
+SET_CORE_VERSION 1.3
+SET_CORE_VLNV xilinx.com:ip:microblaze_mcs:1.3
+SET_CORE_CLASS com.xilinx.ip.microblaze_mcs_v1_3.microblaze_mcs_v1_3
+SET_CORE_PATH C:/Xilinx/14.4/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/microblaze_mcs_v1_3
+SET_CORE_GUIPATH C:/Xilinx/14.4/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/microblaze_mcs_v1_3/gui/microblaze_mcs_v1_3.tcl
+SET_CORE_DATASHEET http://www.xilinx.com/cgi-bin/docs/rdoc?v=2012.4;d=pg048-microblaze-mcs.pdf
+ADD_CORE_DOCUMENT <http://www.xilinx.com/cgi-bin/docs/rdoc?v=2012.4;d=pg048-microblaze-mcs.pdf><MicroBlaze MCS Product Guide>
+ADD_CORE_DOCUMENT <http://www.xilinx.com/cgi-bin/docs/rdoc?v=2012.4;d=mb_ref_guide.pdf><MicroBlaze Processor Reference Guide>
+ADD_CORE_DOCUMENT <http://www.xilinx.com/cgi-bin/docs/ipdoc?c=iomodule;v=v1_02_b;d=pg052-iomodule.pdf><I/O Module Product Guide>
+ADD_CORE_DOCUMENT <http://www.xilinx.com/cgi-bin/docs/ipdoc?c=lmb_bram_if_cntlr;v=v3_10_c;d=pg061-lmb-bram-if-cntlr.pdf><LMB BRAM Interface Controller Product Guide>
+ADD_CORE_DOCUMENT <http://www.xilinx.com/cgi-bin/docs/ipdoc?c=lmb_v10;v=v2_00_b;d=pg087-lmb-v10.pdf><Local Memory Bus (LMB) V10 Product Guide>
+ADD_CORE_DOCUMENT <http://www.xilinx.com/cgi-bin/docs/ipdoc?c=mdm;v=v2_10_a;d=pg062-mdm.pdf><MicroBlaze Debug Module (MDM) Product Guide>
+ADD_CORE_DOCUMENT <http://www.xilinx.com/cgi-bin/docs/rdoc?l=en;v=14.4;d=SDK_Doc/index.html><Xilinx Software Development Kit Help>
+ADD_CORE_DOCUMENT <C:\Xilinx\14.4\ISE_DS\ISE\coregen\ip\xilinx\primary\com\xilinx\ip\microblaze_mcs_v1_3\doc\microblaze_mcs_v1_3_vinfo.html><Version Information>
+ADD_CORE_DOCUMENT <C:\Xilinx\14.4\ISE_DS\ISE\coregen\ip\xilinx\primary\com\xilinx\ip\microblaze_mcs_v1_3\doc\microblaze_mcs_v1_3_readme.txt><README File>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/Divider.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/FPAdder.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/FPDivider.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/FPMultiplier.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/MouseP.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/Multiplier.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/PROM.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/PS2.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/RISC5.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/RISC5Top_pepino.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/RS232R.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/RS232T.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/SPI.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;J:/Documents/Projects/Pepino_v1.0/RISC5Verilog_Pepino/src/VID_pepino.v&quot; into library work</arg>
+</msg>
+
+</messages>
+

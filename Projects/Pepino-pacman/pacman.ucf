@@ -1,0 +1,52 @@
+
+VCCAUX = 3.3;
+
+########################################
+# Reset button and LEDs
+########################################
+NET "RSTBTN"        LOC = "K14" | IOSTANDARD = LVTTL  | PULLDOWN;
+
+##############################################################################
+# SYSCLK Input
+##############################################################################
+
+NET "SYS_CLK"       LOC = "J16" | IOSTANDARD = LVTTL | PERIOD = 50 MHz;
+NET "SYS_CLK" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+
+##############################################################################
+# Mechanical Switches (SW)
+##############################################################################
+
+NET "SW<0>"         LOC = "G14" | IOSTANDARD = LVTTL | PULLDOWN ; # Start 1
+NET "SW<1>"         LOC = "G16" | IOSTANDARD = LVTTL | PULLDOWN ; # Coin 2
+NET "SW<2>"         LOC = "F15" | IOSTANDARD = LVTTL | PULLDOWN ; # Coin 1
+NET "SW<3>"         LOC = "F16" | IOSTANDARD = LVTTL | PULLDOWN ; # Start 2
+
+NET "JOYSTICK(0)"   LOC = "N5" | IOSTANDARD = LVTTL | PULLUP ; # 0 Up
+NET "JOYSTICK(1)"   LOC = "M6" | IOSTANDARD = LVTTL | PULLUP ; # 1 Down
+NET "JOYSTICK(2)"   LOC = "P7" | IOSTANDARD = LVTTL | PULLUP ; # 2 Left
+NET "JOYSTICK(3)"   LOC = "P8" | IOSTANDARD = LVTTL | PULLUP ; # 3 Right
+NET "JOYSTICK(4)"   LOC = "R9" | IOSTANDARD = LVTTL | PULLUP ; # 4 Fire
+
+NET "LED(3)"        LOC = "M13" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ; # HDMI lock
+NET "LED(2)"        LOC = "M14" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ; #
+NET "LED(1)"        LOC = "N14" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ; # P2 Start Lamp
+NET "LED(0)"        LOC = "N16" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST ; # P1 Start Lamp
+
+# VGA port
+NET "VGA_HSYNC"     LOC = "D11" | IOSTANDARD = LVTTL;
+NET "VGA_VSYNC"     LOC = "E11" | IOSTANDARD = LVTTL;
+NET "VGA_RED<0>"    LOC = "B10" | IOSTANDARD = LVTTL;
+NET "VGA_RED<1>"    LOC = "A10" | IOSTANDARD = LVTTL;
+NET "VGA_RED<2>"    LOC = "C11" | IOSTANDARD = LVTTL;
+NET "VGA_GREEN<0>"  LOC = "A11" | IOSTANDARD = LVTTL;
+NET "VGA_GREEN<1>"  LOC = "B12" | IOSTANDARD = LVTTL;
+NET "VGA_GREEN<2>"  LOC = "A12" | IOSTANDARD = LVTTL;
+NET "VGA_BLUE<0>"   LOC = "C13" | IOSTANDARD = LVTTL;
+NET "VGA_BLUE<1>"   LOC = "A13" | IOSTANDARD = LVTTL;
+
+NET audio_l         LOC = "K15" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;	#
+NET audio_r         LOC = "K16" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;	#
+
+##############################################################################

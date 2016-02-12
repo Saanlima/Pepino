@@ -1,0 +1,12 @@
+11a12
+>   output SDled,
+14c15
+<   output [17:0] SRadr,
+---
+>   output [18:0] SRadr,
+21c22
+<   output [2:0] RGB,
+---
+>   output [7:0] RGB,
+123a125
+> assign SDled = spiCtrl[0];
