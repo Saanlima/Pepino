@@ -1,0 +1,7 @@
+INFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+WARNING:sim - Verilog simulation file type 'Behavioral' is not valid for this
+   core. Overriding with simulation file type 'Structural'.
+Cancelled executing Tcl generator.
+Wrote CGP file for project 'microblaze_mcs_v1_3'.

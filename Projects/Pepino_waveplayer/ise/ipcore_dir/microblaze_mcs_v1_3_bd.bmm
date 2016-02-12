@@ -1,0 +1,59 @@
+// BMM LOC annotation file.
+//
+// Release 14.6 -  P.20131013, build 3.0.10 Apr 3, 2013
+// Copyright (c) 1995-2016 Xilinx, Inc.  All rights reserved.
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Processor 'microblaze_mcs_v1_3', ID 100, memory map.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+ADDRESS_MAP microblaze_mcs_v1_3 MICROBLAZE-LE 100
+
+    ///////////////////////////////////////////////////////////////////////////////
+    //
+    // Processor 'microblaze_mcs_v1_3' address space 'lmb_bram' 0x00000000:0x0000FFFF (64 KBytes).
+    //
+    ///////////////////////////////////////////////////////////////////////////////
+
+    ADDRESS_SPACE lmb_bram RAMB16 [0x00000000:0x0000FFFF]
+        BUS_BLOCK
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[0].RAMB16_S1_1 RAMB16 [31:31] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_0.mem PLACED = X2Y14;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[1].RAMB16_S1_1 RAMB16 [30:30] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_1.mem PLACED = X0Y10;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[2].RAMB16_S1_1 RAMB16 [29:29] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_2.mem PLACED = X1Y8;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[3].RAMB16_S1_1 RAMB16 [28:28] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_3.mem PLACED = X0Y20;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[4].RAMB16_S1_1 RAMB16 [27:27] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_4.mem PLACED = X0Y22;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[5].RAMB16_S1_1 RAMB16 [26:26] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_5.mem PLACED = X1Y22;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[6].RAMB16_S1_1 RAMB16 [25:25] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_6.mem PLACED = X2Y16;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[7].RAMB16_S1_1 RAMB16 [24:24] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_7.mem PLACED = X2Y12;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[8].RAMB16_S1_1 RAMB16 [23:23] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_8.mem PLACED = X2Y8;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[9].RAMB16_S1_1 RAMB16 [22:22] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_9.mem PLACED = X0Y6;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[10].RAMB16_S1_1 RAMB16 [21:21] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_10.mem PLACED = X1Y4;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[11].RAMB16_S1_1 RAMB16 [20:20] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_11.mem PLACED = X0Y24;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[12].RAMB16_S1_1 RAMB16 [19:19] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_12.mem PLACED = X0Y26;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[13].RAMB16_S1_1 RAMB16 [18:18] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_13.mem PLACED = X2Y20;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[14].RAMB16_S1_1 RAMB16 [17:17] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_14.mem PLACED = X2Y10;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[15].RAMB16_S1_1 RAMB16 [16:16] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_15.mem PLACED = X2Y6;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[16].RAMB16_S1_1 RAMB16 [15:15] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_16.mem PLACED = X1Y12;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[17].RAMB16_S1_1 RAMB16 [14:14] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_17.mem PLACED = X0Y14;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[18].RAMB16_S1_1 RAMB16 [13:13] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_18.mem PLACED = X1Y14;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[19].RAMB16_S1_1 RAMB16 [12:12] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_19.mem PLACED = X0Y16;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[20].RAMB16_S1_1 RAMB16 [11:11] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_20.mem PLACED = X0Y18;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[21].RAMB16_S1_1 RAMB16 [10:10] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_21.mem PLACED = X1Y20;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[22].RAMB16_S1_1 RAMB16 [9:9] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_22.mem PLACED = X1Y18;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[23].RAMB16_S1_1 RAMB16 [8:8] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_23.mem PLACED = X1Y16;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[24].RAMB16_S1_1 RAMB16 [7:7] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_24.mem PLACED = X1Y6;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[25].RAMB16_S1_1 RAMB16 [6:6] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_25.mem PLACED = X0Y8;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[26].RAMB16_S1_1 RAMB16 [5:5] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_26.mem PLACED = X1Y10;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[27].RAMB16_S1_1 RAMB16 [4:4] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_27.mem PLACED = X0Y12;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[28].RAMB16_S1_1 RAMB16 [3:3] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_28.mem PLACED = X0Y28;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[29].RAMB16_S1_1 RAMB16 [2:2] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_29.mem PLACED = X2Y22;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[30].RAMB16_S1_1 RAMB16 [1:1] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_30.mem PLACED = X2Y24;
+            mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S1.The_BRAMs[31].RAMB16_S1_1 RAMB16 [0:0] [0:16383] INPUT = microblaze_mcs_v1_3.lmb_bram_31.mem PLACED = X2Y18;
+        END_BUS_BLOCK;
+    END_ADDRESS_SPACE;
+
+END_ADDRESS_MAP;
+
