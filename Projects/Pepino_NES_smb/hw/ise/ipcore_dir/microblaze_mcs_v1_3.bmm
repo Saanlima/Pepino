@@ -1,0 +1,24 @@
+ADDRESS_MAP microblaze_mcs_v1_3 MICROBLAZE-LE 100
+  ADDRESS_SPACE lmb_bram COMBINED [0x00000000:0x00007fff]
+    ADDRESS_RANGE RAMB16
+      BUS_BLOCK
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[0].RAMB16_S2_1 [31:30] INPUT = microblaze_mcs_v1_3.lmb_bram_0.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[1].RAMB16_S2_1 [29:28] INPUT = microblaze_mcs_v1_3.lmb_bram_1.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[2].RAMB16_S2_1 [27:26] INPUT = microblaze_mcs_v1_3.lmb_bram_2.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[3].RAMB16_S2_1 [25:24] INPUT = microblaze_mcs_v1_3.lmb_bram_3.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[4].RAMB16_S2_1 [23:22] INPUT = microblaze_mcs_v1_3.lmb_bram_4.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[5].RAMB16_S2_1 [21:20] INPUT = microblaze_mcs_v1_3.lmb_bram_5.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[6].RAMB16_S2_1 [19:18] INPUT = microblaze_mcs_v1_3.lmb_bram_6.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[7].RAMB16_S2_1 [17:16] INPUT = microblaze_mcs_v1_3.lmb_bram_7.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[8].RAMB16_S2_1 [15:14] INPUT = microblaze_mcs_v1_3.lmb_bram_8.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[9].RAMB16_S2_1 [13:12] INPUT = microblaze_mcs_v1_3.lmb_bram_9.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[10].RAMB16_S2_1 [11:10] INPUT = microblaze_mcs_v1_3.lmb_bram_10.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[11].RAMB16_S2_1 [9:8] INPUT = microblaze_mcs_v1_3.lmb_bram_11.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[12].RAMB16_S2_1 [7:6] INPUT = microblaze_mcs_v1_3.lmb_bram_12.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[13].RAMB16_S2_1 [5:4] INPUT = microblaze_mcs_v1_3.lmb_bram_13.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[14].RAMB16_S2_1 [3:2] INPUT = microblaze_mcs_v1_3.lmb_bram_14.mem;
+        mcs_0/U0/lmb_bram_I/RAM_Inst/Using_B16_S2.The_BRAMs[15].RAMB16_S2_1 [1:0] INPUT = microblaze_mcs_v1_3.lmb_bram_15.mem;
+      END_BUS_BLOCK;
+    END_ADDRESS_RANGE;
+  END_ADDRESS_SPACE;
+END_ADDRESS_MAP;

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="sim" num="172" delta="old" >Generating IP...
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Verilog simulation file type &apos;Behavioral&apos; is not valid for this core. Overriding with simulation file type &apos;Structural&apos;.</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">A core named &apos;microblaze_mcs_v1_3&apos; already exists in the project. Output products for this core may be overwritten.</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Verilog simulation file type &apos;Behavioral&apos; is not valid for this core. Overriding with simulation file type &apos;Structural&apos;.</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">A core named &apos;microblaze_mcs_v1_3&apos; already exists in the project. Output products for this core may be overwritten.</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Pre-processing HDL files for &apos;microblaze_mcs_v1_3&apos;...</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Running microblaze_mcs_gen_script.tcl</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Please source the &quot;microblaze_mcs_setup.tcl&quot; script in the Tcl Console to complete MicroBlaze MCS core generation</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Verilog simulation file type &apos;Behavioral&apos; is not valid for this core. Overriding with simulation file type &apos;Structural&apos;.</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Verilog simulation file type &apos;Behavioral&apos; is not valid for this core. Overriding with simulation file type &apos;Structural&apos;.</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Running microblaze_mcs_sim_script.tcl</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">C_MICROBLAZE_INSTANCE = microblaze_mcs_v1_3</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Netlist filename = ./_cg/microblaze_mcs_v1_3.v</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_15.mem&quot; for BRAM 15</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_14.mem&quot; for BRAM 14</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_13.mem&quot; for BRAM 13</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_12.mem&quot; for BRAM 12</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_11.mem&quot; for BRAM 11</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_10.mem&quot; for BRAM 10</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_9.mem&quot; for BRAM 9</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_8.mem&quot; for BRAM 8</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_7.mem&quot; for BRAM 7</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_6.mem&quot; for BRAM 6</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_5.mem&quot; for BRAM 5</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_4.mem&quot; for BRAM 4</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_3.mem&quot; for BRAM 3</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_2.mem&quot; for BRAM 2</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_1.mem&quot; for BRAM 1</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Setting INIT_FILE = &quot;microblaze_mcs_v1_3.lmb_bram_0.mem&quot; for BRAM 0</arg>
+</msg>
+
+<msg type="info" file="sim" num="949" delta="old" >Finished generation of ASY schematic symbol.
+</msg>
+
+<msg type="info" file="sim" num="948" delta="old" >Finished FLIST file generation.
+</msg>
+
+</messages>
+

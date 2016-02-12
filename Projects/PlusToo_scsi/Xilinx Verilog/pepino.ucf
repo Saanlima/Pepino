@@ -1,0 +1,132 @@
+NET "*" IOSTANDARD=LVCMOS33;
+CONFIG VCCAUX = "3.3" ;
+
+NET "CLOCK_50" LOC = "J16";
+NET "CLOCK_50" TNM_NET = "osc";
+TIMESPEC "TS_osc" = PERIOD "osc" 20.000ns;
+
+NET "SWITCH" LOC = "K14" | PULLDOWN;
+
+NET "SW[0]" LOC = "G14" | PULLDOWN;
+NET "SW[1]" LOC = "G16" | PULLDOWN;
+NET "SW[2]" LOC = "F15" | PULLDOWN;
+NET "SW[3]" LOC = "F16" | PULLDOWN;
+NET "SW[4]" LOC = "E15" | PULLDOWN;
+NET "SW[5]" LOC = "E16" | PULLDOWN;
+NET "SW[6]" LOC = "D14" | PULLDOWN;
+NET "SW[7]" LOC = "D16" | PULLDOWN;
+
+#NET "TXD" LOC = "B16";
+#NET "RXD" LOC = "B15";
+
+NET "LED[0]" LOC = "N16";
+NET "LED[1]" LOC = "N14";
+NET "LED[2]" LOC = "M14";
+NET "LED[3]" LOC = "M13";
+NET "LED[4]" LOC = "L12";
+NET "LED[5]" LOC = "L13";
+NET "LED[6]" LOC = "L14";
+NET "LED[7]" LOC = "L16";
+
+# SRAM
+NET "_sramCE0" LOC = "H4";
+NET "_sramCE1" LOC = "J4";
+NET "_sramWE" LOC = "J1";
+NET "_sramOE" LOC = "B6";
+NET "_sramDS[0]" LOC = "B3";
+NET "_sramDS[1]" LOC = "C3";
+NET "_sramDS[2]" LOC = "R1";
+NET "_sramDS[3]" LOC = "R2";
+NET "sramAddr[0]" LOC = "E3";
+NET "sramAddr[1]" LOC = "E4";
+NET "sramAddr[2]" LOC = "F3";
+NET "sramAddr[3]" LOC = "F4";
+NET "sramAddr[4]" LOC = "H3";
+NET "sramAddr[5]" LOC = "J3";
+NET "sramAddr[6]" LOC = "L4";
+NET "sramAddr[7]" LOC = "L5";
+NET "sramAddr[8]" LOC = "K1";
+NET "sramAddr[9]" LOC = "K2";
+NET "sramAddr[10]" LOC = "D5";
+NET "sramAddr[11]" LOC = "C5";
+NET "sramAddr[12]" LOC = "A4";
+NET "sramAddr[13]" LOC = "B5";
+NET "sramAddr[14]" LOC = "A5";
+NET "sramAddr[15]" LOC = "A6";
+NET "sramAddr[16]" LOC = "C7";
+NET "sramAddr[17]" LOC = "A7";
+NET "sramAddr[18]" LOC = "D6";
+NET "sramData[0]" LOC = "E1";
+NET "sramData[1]" LOC = "E2";
+NET "sramData[2]" LOC = "F1";
+NET "sramData[3]" LOC = "F2";
+NET "sramData[4]" LOC = "G1";
+NET "sramData[5]" LOC = "G3";
+NET "sramData[6]" LOC = "H1";
+NET "sramData[7]" LOC = "H2";
+NET "sramData[8]" LOC = "A3";
+NET "sramData[9]" LOC = "A2";
+NET "sramData[10]" LOC = "B1";
+NET "sramData[11]" LOC = "B2";
+NET "sramData[12]" LOC = "C1";
+NET "sramData[13]" LOC = "C2";
+NET "sramData[14]" LOC = "D1";
+NET "sramData[15]" LOC = "D3";
+NET "sramData[16]" LOC = "P4";
+NET "sramData[17]" LOC = "T4";
+NET "sramData[18]" LOC = "R5";
+NET "sramData[19]" LOC = "T5";
+NET "sramData[20]" LOC = "P6";
+NET "sramData[21]" LOC = "T6";
+NET "sramData[22]" LOC = "R7";
+NET "sramData[23]" LOC = "T7";
+NET "sramData[24]" LOC = "L1";
+NET "sramData[25]" LOC = "L3";
+NET "sramData[26]" LOC = "M1";
+NET "sramData[27]" LOC = "M2";
+NET "sramData[28]" LOC = "N1";
+NET "sramData[29]" LOC = "N3";
+NET "sramData[30]" LOC = "P1";
+NET "sramData[31]" LOC = "P2";
+
+# VGA port
+NET "VGA_HSYNC"    LOC = D11;
+NET "VGA_VSYNC"    LOC = E11;
+NET "VGA_RED<0>"   LOC = B10;
+NET "VGA_RED<1>"   LOC = A10;
+NET "VGA_RED<2>"   LOC = C11;
+NET "VGA_GREEN<0>" LOC = A11;
+NET "VGA_GREEN<1>" LOC = B12;
+NET "VGA_GREEN<2>" LOC = A12;
+NET "VGA_BLUE<0>"  LOC = C13;
+NET "VGA_BLUE<1>"  LOC = A13;
+
+# PS/2 keyboard
+NET "keyClk" LOC = "C9" | PULLUP;
+NET "keyData" LOC = "A9" | PULLUP;
+
+# PS/2 mouse
+NET "mouseClk" LOC = "B8" | PULLUP;
+NET "mouseData" LOC = "A8" | PULLUP;
+
+# FLASH
+NET FLASH_CS       LOC = "T3"  | IOSTANDARD=LVCMOS33 | DRIVE=8 | SLEW=FAST;
+NET FLASH_CK       LOC = "R11" | IOSTANDARD=LVCMOS33 | DRIVE=8 | SLEW=FAST;
+NET FLASH_SI       LOC = "T10" | IOSTANDARD=LVCMOS33 | DRIVE=8 | SLEW=FAST;
+NET FLASH_SO       LOC = "P10" | IOSTANDARD=LVCMOS33 | DRIVE=8 | SLEW=FAST | PULLUP;
+NET FLASH_WP       LOC = "N12" | IOSTANDARD=LVCMOS33 | PULLUP ;
+NET FLASH_HOLD     LOC = "P12" | IOSTANDARD=LVCMOS33 | PULLUP ;
+
+# sd-card SDIO interface
+NET "sd_dat<0>"      LOC = "H15" | IOSTANDARD = SDIO | SLEW = FAST | DRIVE = 8 | PULLUP;
+NET "sd_dat<1>"      LOC = "H16" | IOSTANDARD = SDIO | SLEW = FAST | DRIVE = 8 | PULLUP;
+NET "sd_dat<2>"      LOC = "E12" | IOSTANDARD = SDIO | SLEW = FAST | DRIVE = 8 | PULLUP;
+NET "sd_dat<3>"      LOC = "E13" | IOSTANDARD = SDIO | SLEW = FAST | DRIVE = 8 | PULLUP;
+NET "sd_cmd"         LOC = "F14" | IOSTANDARD = SDIO | SLEW = FAST | DRIVE = 8 | PULLUP;
+NET "sd_clk"         LOC = "F13" | IOSTANDARD = SDIO | SLEW = FAST | DRIVE = 8;
+NET "sd_active"      LOC = "H13" | SLEW = SLOW | DRIVE = 8;
+NET "sd_switch"      LOC = "J14" | PULLUP;
+
+# audio
+NET "AUDIO_L"   LOC = "K15"   | IOSTANDARD = LVCMOS33;
+NET "AUDIO_R"   LOC = "K16"   | IOSTANDARD = LVCMOS33;

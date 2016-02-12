@@ -1,0 +1,82 @@
+ADDRESS_SPACE prg_rom COMBINED [0x00000000:0x00007FFF]
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram1 [7:0] PLACED = X1Y14;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram2 [7:0] PLACED = X2Y36;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram3 [7:0] PLACED = X1Y16;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram4 [7:0] PLACED = X1Y20;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram5 [7:0] PLACED = X0Y20;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram6 [7:0] PLACED = X1Y22;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram7 [7:0] PLACED = X1Y18;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram8 [7:0] PLACED = X2Y34;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram9 [7:0] PLACED = X2Y10;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram10 [7:0] PLACED = X2Y28;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram11 [7:0] PLACED = X1Y12;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram12 [7:0] PLACED = X2Y32;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram13 [7:0] PLACED = X2Y8;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram14 [7:0] PLACED = X2Y26;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram15 [7:0] PLACED = X2Y12;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/prgrom_bram/Mram_ram16 [7:0] PLACED = X2Y30;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+END_ADDRESS_SPACE; 

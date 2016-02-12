@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="microblaze_mcs_v1_3">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-12-12T1:43:36</timestamp>
+    <pin polarity="Input" x="0" y="80" name="clk" />
+    <pin polarity="Input" x="0" y="112" name="reset" />
+    <pin polarity="Output" x="768" y="944" name="io_addr_strobe" />
+    <pin polarity="Output" x="768" y="976" name="io_read_strobe" />
+    <pin polarity="Output" x="768" y="1008" name="io_write_strobe" />
+    <pin polarity="Output" x="768" y="1040" name="io_address[31:0]" />
+    <pin polarity="Output" x="768" y="1072" name="io_byte_enable[3:0]" />
+    <pin polarity="Output" x="768" y="1104" name="io_write_data[31:0]" />
+    <pin polarity="Input" x="768" y="1136" name="io_read_data[31:0]" />
+    <pin polarity="Input" x="768" y="1168" name="io_ready" />
+    <graph>
+        <text style="fontsize:40;fontname:Arial" x="32" y="32">microblaze_mcs_v1_3</text>
+        <rect width="704" x="32" y="32" height="1696" />
+        <line x2="32" y1="80" y2="80" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="80" type="pin clk" />
+        <line x2="32" y1="112" y2="112" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="112" type="pin reset" />
+        <line x2="736" y1="944" y2="944" x1="768" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="732" y="944" type="pin io_addr_strobe" />
+        <line x2="736" y1="976" y2="976" x1="768" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="732" y="976" type="pin io_read_strobe" />
+        <line x2="736" y1="1008" y2="1008" x1="768" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="732" y="1008" type="pin io_write_strobe" />
+        <line x2="736" y1="1040" y2="1040" style="linewidth:W" x1="768" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="732" y="1040" type="pin io_address[31:0]" />
+        <line x2="736" y1="1072" y2="1072" style="linewidth:W" x1="768" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="732" y="1072" type="pin io_byte_enable[3:0]" />
+        <line x2="736" y1="1104" y2="1104" style="linewidth:W" x1="768" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="732" y="1104" type="pin io_write_data[31:0]" />
+        <line x2="736" y1="1136" y2="1136" style="linewidth:W" x1="768" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="732" y="1136" type="pin io_read_data[31:0]" />
+        <line x2="736" y1="1168" y2="1168" x1="768" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="732" y="1168" type="pin io_ready" />
+    </graph>
+</symbol>

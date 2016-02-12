@@ -1,0 +1,60 @@
+INFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+WARNING:sim - Verilog simulation file type 'Behavioral' is not valid for this
+   core. Overriding with simulation file type 'Structural'.
+WARNING:sim - A core named 'microblaze_mcs_v1_3' already exists in the project.
+   Output products for this core may be overwritten.
+Resolving generics for 'microblaze_mcs_v1_3'...
+WARNING:sim - Verilog simulation file type 'Behavioral' is not valid for this
+   core. Overriding with simulation file type 'Structural'.
+WARNING:sim - A core named 'microblaze_mcs_v1_3' already exists in the project.
+   Output products for this core may be overwritten.
+Applying external generics to 'microblaze_mcs_v1_3'...
+Delivering associated files for 'microblaze_mcs_v1_3'...
+Generating implementation netlist for 'microblaze_mcs_v1_3'...
+INFO:sim - Pre-processing HDL files for 'microblaze_mcs_v1_3'...
+Running synthesis for 'microblaze_mcs_v1_3'
+Running ngcbuild...
+Delivered 3 files into directory
+J:/Documents/Projects/Pepino_v1.0/Pepino_LX25/fpga_nes_mb/hw/ise/ipcore_dir/tmp/
+_cg/microblaze_mcs_v1_3
+INFO:sim - Running microblaze_mcs_gen_script.tcl
+INFO:sim - Please source the "microblaze_mcs_setup.tcl" script in the Tcl
+   Console to complete MicroBlaze MCS core generation
+Writing VEO instantiation template for 'microblaze_mcs_v1_3'...
+WARNING:sim - Verilog simulation file type 'Behavioral' is not valid for this
+   core. Overriding with simulation file type 'Structural'.
+Writing Verilog structural simulation model for 'microblaze_mcs_v1_3'...
+WARNING:sim - Verilog simulation file type 'Behavioral' is not valid for this
+   core. Overriding with simulation file type 'Structural'.
+INFO:sim - Running microblaze_mcs_sim_script.tcl
+INFO:sim - C_MICROBLAZE_INSTANCE = microblaze_mcs_v1_3
+INFO:sim - Netlist filename = ./_cg/microblaze_mcs_v1_3.v
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_15.mem" for BRAM 15
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_14.mem" for BRAM 14
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_13.mem" for BRAM 13
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_12.mem" for BRAM 12
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_11.mem" for BRAM 11
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_10.mem" for BRAM 10
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_9.mem" for BRAM 9
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_8.mem" for BRAM 8
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_7.mem" for BRAM 7
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_6.mem" for BRAM 6
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_5.mem" for BRAM 5
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_4.mem" for BRAM 4
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_3.mem" for BRAM 3
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_2.mem" for BRAM 2
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_1.mem" for BRAM 1
+INFO:sim - Setting INIT_FILE = "microblaze_mcs_v1_3.lmb_bram_0.mem" for BRAM 0
+Generating ASY schematic symbol...
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+Generating SYM schematic symbol for 'microblaze_mcs_v1_3'...
+Regenerating ISE project file for 'microblaze_mcs_v1_3'...
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Launching README viewer...
+Moving files to output directory...
+Finished moving files to output directory
+Wrote CGP file for project 'microblaze_mcs_v1_3'.

@@ -1,0 +1,22 @@
+ADDRESS_SPACE chr_rom COMBINED [0x00000000:0x00001FFF]
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/chrrom_pat_bram/Mram_ram1 [7:0] PLACED = X2Y14;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/chrrom_pat_bram/Mram_ram2 [7:0] PLACED = X2Y20;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/chrrom_pat_bram/Mram_ram3 [7:0] PLACED = X2Y22;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+  ADDRESS_RANGE RAMB16
+    BUS_BLOCK
+      cart_blk/chrrom_pat_bram/Mram_ram4 [7:0] PLACED = X2Y16;
+    END_BUS_BLOCK;
+  END_ADDRESS_RANGE;
+END_ADDRESS_SPACE; 
