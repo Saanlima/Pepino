@@ -1,0 +1,27 @@
+NET "*" IOSTANDARD=LVCMOS33;
+CONFIG VCCAUX = "3.3" ;
+
+NET "clkin" LOC = "J16";
+NET "clkin" TNM_NET = "clkin";
+TIMESPEC "TS_clkin" = PERIOD "clkin" 20.000ns;
+
+NET "switch" LOC = "K14" | PULLDOWN;
+
+NET "SW[0]" LOC = "G14" | PULLDOWN;
+NET "SW[1]" LOC = "G16" | PULLDOWN;
+NET "SW[2]" LOC = "F15" | PULLDOWN;
+NET "SW[3]" LOC = "F16" | PULLDOWN;
+NET "SW[4]" LOC = "E15" | PULLDOWN;
+NET "SW[5]" LOC = "E16" | PULLDOWN;
+NET "SW[6]" LOC = "D14" | PULLDOWN;
+NET "SW[7]" LOC = "D16" | PULLDOWN;
+
+NET "LED[0]" LOC = "N16";
+NET "LED[1]" LOC = "N14";
+NET "LED[2]" LOC = "M14";
+NET "LED[3]" LOC = "M13";
+NET "LED[4]" LOC = "L12";
+NET "LED[5]" LOC = "L13";
+NET "LED[6]" LOC = "L14";
+NET "LED[7]" LOC = "L16";
+
