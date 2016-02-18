@@ -64,7 +64,6 @@ wire enable;
 reg [1:0] cnt;
 wire clk;
 reg wr_enable;
-//reg clk;
 
 RISC5 riscx(.clk(clk), .enable(enable), .rst(rst), .rd(rd), .wr(wr), .ben(ben),
    .stallX(dspreq), .adr(adr), .codebus(inbus0), .inbus(inbus),
@@ -102,7 +101,6 @@ assign SRce1 = ben & ~adr[1];
 assign SRbe0 = ben & adr[0];
 assign SRbe1 = ben & ~adr[0];
 assign SRwe = ~wr_enable;
-//assign SRwe = ~wr | clk;
 assign SRoe = wr;
 assign SRbe = {SRbe1, SRbe0, SRbe1, SRbe0};
 assign SRadr = dspreq ? vidadr : adr[19:2];
@@ -133,7 +131,6 @@ assign MOSI[1] = MOSI[0], SCLK[1] = SCLK[0], NEN = spiCtrl[3];
 assign doneKbd = rd & ioenb & (iowadr == 7);
 assign SDled = spiCtrl[0];
 assign enable = (cnt == 2'b00);
-//assign enable = 1'b1;
 
 always @(posedge clk)
 if (enable) begin
@@ -156,13 +153,5 @@ always @ (posedge clk) begin
   wr_enable <= wr & (cnt == 2'b01);
 end
 
-
-/*
-always @ (posedge CLK50M)
-  cnt <= cnt + 1'b1;
-
-assign clk = cnt[0];
-assign enable = cnt[1];
-*/
 
 endmodule
