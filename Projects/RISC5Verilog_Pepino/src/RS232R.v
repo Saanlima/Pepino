@@ -4,12 +4,12 @@
 // clock is 25 MHz
 
 module RS232R(
-    input clk, rst,
-	 input RxD,
-    input fsel,
-    input done,   // "byte has been read"
-    output rdy,
-    output [7:0] data);
+  input clk, enable, rst,
+	input RxD,
+  input fsel,
+  input done,   // "byte has been read"
+  output rdy,
+  output [7:0] data);
 
 wire endtick, midtick, endbit;
 wire [11:0] limit;
@@ -26,13 +26,14 @@ assign endbit = bitcnt == 8;
 assign data = shreg;
 assign rdy = stat;
 
-always @ (posedge clk) begin
-  Q0 <= RxD; Q1 <= Q0;
-  run <= (Q1 & ~Q0) | ~(~rst | endtick & endbit) & run;
-  tick <= (run & ~endtick) ? tick+1 : 0;
-  bitcnt <= (endtick & ~endbit) ? bitcnt + 1 :
-    (endtick & endbit) ? 0 : bitcnt;
-  shreg <= midtick ? {Q1, shreg[7:1]} : shreg;
-  stat <= (endtick & endbit) | ~(~rst | done) & stat;
-end
+always @ (posedge clk)
+  if (enable) begin
+    Q0 <= RxD; Q1 <= Q0;
+    run <= (Q1 & ~Q0) | ~(~rst | endtick & endbit) & run;
+    tick <= (run & ~endtick) ? tick+1 : 0;
+    bitcnt <= (endtick & ~endbit) ? bitcnt + 1 :
+      (endtick & endbit) ? 0 : bitcnt;
+    shreg <= midtick ? {Q1, shreg[7:1]} : shreg;
+    stat <= (endtick & endbit) | ~(~rst | done) & stat;
+  end
 endmodule

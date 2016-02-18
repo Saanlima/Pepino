@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps  // NW 15.9.2015
 module FPMultiplier(
-  input clk, run,
+  input clk, enable, run,
   input [31:0] x, y,
   output stall,
   output [31:0] z);
@@ -27,8 +27,9 @@ assign z0 = P[47] ? P[47:24] : P[46:23];
 assign z = (xe == 0) | (ye == 0) ? 0 :
    (~e1[8]) ? {sign, e1[7:0], z0[22:0]} :
    (~e1[7]) ? {sign, 8'b11111111, z0[22:0]} : 0;
-always @ (posedge(clk)) begin
+always @ (posedge(clk))
+  if (enable) begin
     P <= (S == 0) ? {24'b0, 1'b1, x[22:0]} : {w1, P[23:1]};
     S <= run ? S+1 : 0;
-end
+  end
 endmodule

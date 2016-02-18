@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps   // NW 18.9.2015
 
 module FPDivider(
-    input clk, run,
+    input clk, enable, run,
     input [31:0] x,
     input [31:0] y,
     output stall,
@@ -35,9 +35,10 @@ assign z = (xe == 0) ? 0 :
   (~e1[8]) ? {sign, e1[7:0], z0[22:0]} :
   (~e1[7]) ? {sign, 8'b11111111, z0[22:0]} : 0;
 
-always @ (posedge(clk)) begin
-  R <= r1[23:0];
-  Q <= {q0[23:0], ~d[24]};
-  S <= run ? S+1 : 0;
-end
+always @ (posedge(clk))
+  if (enable) begin
+    R <= r1[23:0];
+    Q <= {q0[23:0], ~d[24]};
+    S <= run ? S+1 : 0;
+  end
 endmodule

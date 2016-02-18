@@ -3,7 +3,7 @@
 // clock is 25 MHz; 25000 / 1302 = 19.2 KHz
 
 module PS2(
-    input clk, rst,
+    input clk, enable, rst,
     input done,   // "byte has been read"
     output rdy,   // "byte is available"
     output shift, // shift in, tramsmitter
@@ -22,12 +22,13 @@ assign shift = Q1 & ~Q0;
 assign data = fifo[outptr];
 assign rdy = ~(inptr == outptr);
 
-always @ (posedge clk) begin
-  Q0 <= PS2C; Q1 <= Q0;
-  shreg <= (~rst | endbit) ? 11'h7FF :
-    shift ? {PS2D, shreg[10:1]} : shreg;
-  outptr <= ~rst ? 0 : rdy & done ? outptr+1 : outptr;
-  inptr <= ~rst ? 0 : endbit ? inptr+1 : inptr;
-  if (endbit) fifo[inptr] <= shreg[8:1];
-end	 
+always @ (posedge clk)
+  if (enable) begin
+    Q0 <= PS2C; Q1 <= Q0;
+    shreg <= (~rst | endbit) ? 11'h7FF :
+      shift ? {PS2D, shreg[10:1]} : shreg;
+    outptr <= ~rst ? 0 : rdy & done ? outptr+1 : outptr;
+    inptr <= ~rst ? 0 : endbit ? inptr+1 : inptr;
+    if (endbit) fifo[inptr] <= shreg[8:1];
+  end	 
 endmodule

@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps  // 25.9.2015
 
 module RISC5(
-input clk, rst, stallX,
+input clk, enable, rst, stallX,
 input [31:0] inbus, codebus,
 output [23:0] adr,
 output rd, wr, ben,
@@ -46,21 +46,21 @@ wire MOV, LSL, ASR, ROR, AND, ANN, IOR, XOR;  // operation signals
 wire ADD, SUB, MUL, DIV; wire FAD, FSB, FML, FDV;
 wire LDR, STR, BR;
 
-PROM PM (.adr(pcmux[8:0]), .data(pmout), .clk(clk));
+PROM PM (.adr(pcmux[8:0]), .data(pmout), .clk(clk), .enable(enable));
 
-Multiplier mulUnit (.clk(clk), .run(MUL), .stall(stallM),
+Multiplier mulUnit (.clk(clk), .enable(enable), .run(MUL), .stall(stallM),
    .u(~u), .x(B), .y(C1), .z(product));
 
-Divider divUnit (.clk(clk), .run(DIV), .stall(stallD),
+Divider divUnit (.clk(clk), .enable(enable), .run(DIV), .stall(stallD),
    .u(~u), .x(B), .y(C1), .quot(quotient), .rem(remainder));
 
-FPAdder fpaddx (.clk(clk), .run(FAD|FSB), .u(u), .v(v), .stall(stallFA),
-   .x(B), .y({FSB^C0[31], C0[30:0]}), .z(fsum));
+FPAdder fpaddx (.clk(clk), .enable(enable), .run(FAD|FSB), .u(u), .v(v),
+   .stall(stallFA), .x(B), .y({FSB^C0[31], C0[30:0]}), .z(fsum));
 
-FPMultiplier fpmulx (.clk(clk), .run(FML), .stall(stallFM),
+FPMultiplier fpmulx (.clk(clk), .enable(enable), .run(FML), .stall(stallFM),
    .x(B), .y(C0), .z(fprod));
 
-FPDivider fpdivx (.clk(clk), .run(FDV), .stall(stallFD),
+FPDivider fpdivx (.clk(clk), .enable(enable), .run(FDV), .stall(stallFD),
    .x(B), .y(C0), .z(fquot));
 
 assign ins = PMsel ? pmout : IR;  // decoding
@@ -193,18 +193,19 @@ assign sc = C1[31];
 assign stall = stallL | stallM | stallD | stallX | stallFA | stallFM | stallFD;
 assign stallL = (LDR|STR) & ~stall1;
 
-always @ (posedge clk) begin
-  PC <= pcmux;
-  PMsel <= ~rst | (pcmux[21:12] == 10'h3FF);
-  IR <= stall ? IR : codebus;
-  stall1 <= stallX ? stall1 : stallL;
-  R[ira0] <= regwr ? regmux : A;
-  N <= regwr ? regmux[31] : N;
-  Z <= regwr ? (regmux == 0) : Z;
-  C <= ADD ? (~sb&sc&~sa) | (sb&sc&sa) | (sb&~sa) :
-	 SUB ? (~sb&sc&~sa) | (sb&sc&sa) | (~sb&sa) : C;
-  OV <= ADD ? (sa&~sb&~sc) | (~sa&sb&sc): 
-	 SUB ? (sa&~sb&sc) | (~sa&sb&~sc) : OV;
-  H <= MUL ? product[63:32] : DIV ? remainder : H;
-end 
+always @ (posedge clk)
+  if (enable) begin
+    PC <= pcmux;
+    PMsel <= ~rst | (pcmux[21:12] == 10'h3FF);
+    IR <= stall ? IR : codebus;
+    stall1 <= stallX ? stall1 : stallL;
+    R[ira0] <= regwr ? regmux : A;
+    N <= regwr ? regmux[31] : N;
+    Z <= regwr ? (regmux == 0) : Z;
+    C <= ADD ? (~sb&sc&~sa) | (sb&sc&sa) | (sb&~sa) :
+     SUB ? (~sb&sc&~sa) | (sb&sc&sa) | (~sb&sa) : C;
+    OV <= ADD ? (sa&~sb&~sc) | (~sa&sb&sc): 
+     SUB ? (sa&~sb&sc) | (~sa&sb&~sc) : OV;
+    H <= MUL ? product[63:32] : DIV ? remainder : H;
+  end 
 endmodule 
