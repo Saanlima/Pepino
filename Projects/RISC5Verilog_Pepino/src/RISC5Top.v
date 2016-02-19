@@ -36,7 +36,9 @@ module RISC5Top(
 // 8  general-purpose I/O data
 // 9  general-purpose I/O tri-state control
 
-reg rst, clk;
+reg rst;
+reg wr_enable;
+wire clk, clk2x, pclk;
 wire[23:0] adr;
 wire [3:0] iowadr; // word address
 wire [31:0] inbus, inbus0;  // data to RISC core
@@ -69,7 +71,7 @@ RS232T transmitter(.clk(clk), .rst(rst), .start(startTx), .fsel(bitrate),
 SPI spi(.clk(clk), .rst(rst), .start(spiStart), .dataTx(outbus),
    .fast(spiCtrl[2]), .dataRx(spiRx), .rdy(spiRdy),
  	.SCLK(SCLK[0]), .MOSI(MOSI[0]), .MISO(MISO[0] & MISO[1]));
-VID vid(.clk(clk), .req(dspreq), .inv(swi[7]),
+VID vid(.clk(clk), .pclk(pclk), .req(dspreq), .inv(swi[7]),
    .vidadr(vidadr), .viddata(inbus0), .RGB(RGB), .hsync(hsync), .vsync(vsync));
 PS2 kbd(.clk(clk), .rst(rst), .done(doneKbd), .rdy(rdyKbd), .shift(),
    .data(dataKbd), .PS2C(PS2C), .PS2D(PS2D));
@@ -93,7 +95,7 @@ assign SRce0 = ben & adr[1];
 assign SRce1 = ben & ~adr[1];
 assign SRbe0 = ben & adr[0];
 assign SRbe1 = ben & ~adr[0];
-assign SRwe = ~wr | clk;
+assign SRwe = ~wr_enable;
 assign SRoe = wr;
 assign SRbe = {SRbe1, SRbe0, SRbe1, SRbe0};
 assign SRadr = dspreq ? vidadr : adr[19:2];
@@ -136,5 +138,11 @@ begin
   gpoc <= ~rst ? 0 : (wr & ioenb & (iowadr == 9)) ? outbus[7:0] : gpoc;
 end
 
-always @ (posedge CLK50M) clk <= ~clk;
+DCM #(.CLKFX_MULTIPLY(3), .CLKFX_DIVIDE(2), .CLKDV_DIVIDE(2), .CLKIN_PERIOD(20.000))
+  dcm(.CLKIN(CLK50M), .CLKFB(clk2x), .RST(1'b0), .PSEN(1'b0),
+      .PSINCDEC(1'b0), .PSCLK(1'b0), .DSSEN(1'b0), .CLKFX(pclk), .CLKDV(clk), .CLK0(clk2x));
+
+always @(negedge clk2x)
+  wr_enable <= wr & ~wr_enable;
+      
 endmodule

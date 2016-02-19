@@ -2,7 +2,7 @@
 // 1024x768 display controller NW/PR 24.1.2014
 
 module VID(
-    input clk, inv,
+    input clk, pclk, inv,
     input [31:0] viddata,
     output reg req,  // SRAM read request
     output [17:0] vidadr,
@@ -38,10 +38,5 @@ always @(posedge clk) begin  // CPU (SRAM) clock domain
   req <= ~vblank & ~hcnt[10] & (hcnt[5] ^ hword[0]);  // i.e. adr changed
   vidbuf <= req ? viddata : vidbuf;
 end
-
-// pixel clock generation
-DCM #(.CLKFX_MULTIPLY(3), .CLK_FEEDBACK("NONE"), .CLKIN_PERIOD(40.000))
-  dcm(.CLKIN(clk), .CLKFB(1'b0), .RST(1'b0), .PSEN(1'b0),
-      .PSINCDEC(1'b0), .PSCLK(1'b0), .DSSEN(1'b0), .CLKFX(pclk));
 
 endmodule
