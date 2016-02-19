@@ -36,7 +36,7 @@ module RISC5Top(
 // 8  general-purpose I/O data
 // 9  general-purpose I/O tri-state control
 
-reg rst;
+reg rst, clk;
 wire[23:0] adr;
 wire [3:0] iowadr; // word address
 wire [31:0] inbus, inbus0;  // data to RISC core
@@ -60,27 +60,20 @@ wire [17:0] vidadr;
 reg [7:0] gpout, gpoc;
 wire [7:0] gpin;
 
-wire enable;
-reg [1:0] cnt;
-wire clk;
-reg wr_enable;
-
-RISC5 riscx(.clk(clk), .enable(enable), .rst(rst), .rd(rd), .wr(wr), .ben(ben),
-   .stallX(dspreq), .adr(adr), .codebus(inbus0), .inbus(inbus),
-   .outbus(outbus));
-RS232R receiver(.clk(clk), .enable(enable), .rst(rst), .RxD(RxD), .fsel(bitrate),
-   .done(doneRx), .data(dataRx), .rdy(rdyRx));
-RS232T transmitter(.clk(clk), .enable(enable), .rst(rst), .start(startTx),
-   .fsel(bitrate), .data(dataTx), .TxD(TxD), .rdy(rdyTx));
-SPI spi(.clk(clk), .enable(enable), .rst(rst), .start(spiStart), .dataTx(outbus),
+RISC5 riscx(.clk(clk), .rst(rst), .rd(rd), .wr(wr), .ben(ben), .stallX(dspreq),
+   .adr(adr), .codebus(inbus0), .inbus(inbus), .outbus(outbus));
+RS232R receiver(.clk(clk), .rst(rst), .RxD(RxD), .fsel(bitrate), .done(doneRx),
+   .data(dataRx), .rdy(rdyRx));
+RS232T transmitter(.clk(clk), .rst(rst), .start(startTx), .fsel(bitrate),
+   .data(dataTx), .TxD(TxD), .rdy(rdyTx));
+SPI spi(.clk(clk), .rst(rst), .start(spiStart), .dataTx(outbus),
    .fast(spiCtrl[2]), .dataRx(spiRx), .rdy(spiRdy),
- 	 .SCLK(SCLK[0]), .MOSI(MOSI[0]), .MISO(MISO[0] & MISO[1]));
-VID vid(.clk(clk), .enable(enable), .req(dspreq), .inv(swi[7]),
+ 	.SCLK(SCLK[0]), .MOSI(MOSI[0]), .MISO(MISO[0] & MISO[1]));
+VID vid(.clk(clk), .req(dspreq), .inv(swi[7]),
    .vidadr(vidadr), .viddata(inbus0), .RGB(RGB), .hsync(hsync), .vsync(vsync));
-PS2 kbd(.clk(clk), .enable(enable), .rst(rst), .done(doneKbd), .rdy(rdyKbd),
-   .shift(), .data(dataKbd), .PS2C(PS2C), .PS2D(PS2D));
-MouseP Ms(.clk(clk), .enable(enable), .rst(rst), .msclk(msclk), .msdat(msdat),
-   .out(dataMs));
+PS2 kbd(.clk(clk), .rst(rst), .done(doneKbd), .rdy(rdyKbd), .shift(),
+   .data(dataKbd), .PS2C(PS2C), .PS2D(PS2D));
+MouseP Ms(.clk(clk), .rst(rst), .msclk(msclk), .msdat(msdat), .out(dataMs));
 
 assign iowadr = adr[5:2];
 assign ioenb = (adr[23:6] == 18'h3FFFF);
@@ -100,7 +93,7 @@ assign SRce0 = ben & adr[1];
 assign SRce1 = ben & ~adr[1];
 assign SRbe0 = ben & adr[0];
 assign SRbe1 = ben & ~adr[0];
-assign SRwe = ~wr_enable;
+assign SRwe = ~wr | clk;
 assign SRoe = wr;
 assign SRbe = {SRbe1, SRbe0, SRbe1, SRbe0};
 assign SRadr = dspreq ? vidadr : adr[19:2];
@@ -130,28 +123,18 @@ assign SS = ~spiCtrl[1:0];  //active low slave select
 assign MOSI[1] = MOSI[0], SCLK[1] = SCLK[0], NEN = spiCtrl[3];
 assign doneKbd = rd & ioenb & (iowadr == 7);
 assign SDled = spiCtrl[0];
-assign enable = (cnt == 2'b00);
 
 always @(posedge clk)
-if (enable) begin
-    rst <= ((cnt1[4:0] == 0) & limit) ? ~btn[3] : rst;
-    Lreg <= ~rst ? 0 : (wr & ioenb & (iowadr == 1)) ? outbus[7:0] : Lreg;
-    cnt0 <= limit ? 0 : cnt0 + 1;
-    cnt1 <= cnt1 + limit;
-    spiCtrl <= ~rst ? 0 : (wr & ioenb & (iowadr == 5)) ? outbus[3:0] : spiCtrl;
-    bitrate <= ~rst ? 0 : (wr & ioenb & (iowadr == 3)) ? outbus[0] : bitrate;
-    gpout <= (wr & ioenb & (iowadr == 8)) ? outbus[7:0] : gpout;
-    gpoc <= ~rst ? 0 : (wr & ioenb & (iowadr == 9)) ? outbus[7:0] : gpoc;
-  end
-
-DCM #(.CLKFX_MULTIPLY(3), .CLKFX_DIVIDE(2), .CLK_FEEDBACK("NONE"), .CLKIN_PERIOD(20.000))
-  dcm(.CLKIN(CLK50M), .CLKFB(1'b0), .RST(1'b0), .PSEN(1'b0),
-      .PSINCDEC(1'b0), .PSCLK(1'b0), .DSSEN(1'b0), .CLKFX(clk));
-      
-always @ (posedge clk) begin
-  cnt <= (cnt == 2'b10) ? 2'b00 : cnt + 1'b1;
-  wr_enable <= wr & (cnt == 2'b01);
+begin
+  rst <= ((cnt1[4:0] == 0) & limit) ? ~btn[3] : rst;
+  Lreg <= ~rst ? 0 : (wr & ioenb & (iowadr == 1)) ? outbus[7:0] : Lreg;
+  cnt0 <= limit ? 0 : cnt0 + 1;
+  cnt1 <= cnt1 + limit;
+  spiCtrl <= ~rst ? 0 : (wr & ioenb & (iowadr == 5)) ? outbus[3:0] : spiCtrl;
+  bitrate <= ~rst ? 0 : (wr & ioenb & (iowadr == 3)) ? outbus[0] : bitrate;
+  gpout <= (wr & ioenb & (iowadr == 8)) ? outbus[7:0] : gpout;
+  gpoc <= ~rst ? 0 : (wr & ioenb & (iowadr == 9)) ? outbus[7:0] : gpoc;
 end
 
-
+always @ (posedge CLK50M) clk <= ~clk;
 endmodule

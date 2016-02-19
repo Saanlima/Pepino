@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps  // PS/2 Logitech mouse PDR 14.10.2013 / 8.9.2015
 module MouseP(
-  input clk, enable, rst,
+  input clk, rst,
   inout msclk, msdat,
   output [27:0] out);
 
@@ -31,15 +31,14 @@ module MouseP(
   assign dy = {{2{shreg[6]}}, shreg[8] ? 8'b0 : shreg[30:23]};  //sign+overfl
   assign out = {run, btns, 2'b0, y, 2'b0, x};
 
-  always @ (posedge clk)
-    if (enable) begin
-      run <= rst & (reply | run); Q0 <= msclk; Q1 <= Q0;
-      shreg <= ~rst ? InitBuf : (endbit | reply) ? -1 :
-        shift ? {msdat,shreg[31:1]} : shreg;
-      x <= ~rst ? 0 : endbit ? x + dx : x;  y <= ~rst ? 0 :
-        endbit ? y + dy : y;
-      btns <= ~rst ? 0 : endbit ? {shreg[1], shreg[3], shreg[2]} : btns;
-    end
+  always @ (posedge clk) begin
+    run <= rst & (reply | run); Q0 <= msclk; Q1 <= Q0;
+    shreg <= ~rst ? InitBuf : (endbit | reply) ? -1 : shift ? {msdat,
+shreg[31:1]} : shreg;
+    x <= ~rst ? 0 : endbit ? x + dx : x;  y <= ~rst ? 0 : endbit ? y + dy
+: y;
+    btns <= ~rst ? 0 : endbit ? {shreg[1], shreg[3], shreg[2]} : btns;
+  end
 
 endmodule
 

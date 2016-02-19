@@ -2,7 +2,7 @@
 // 1024x768 display controller NW/PR 24.1.2014
 
 module VID(
-    input clk, enable, inv,
+    input clk, inv,
     input [31:0] viddata,
     output reg req,  // SRAM read request
     output [17:0] vidadr,
@@ -26,18 +26,22 @@ assign vid = (pixbuf[0] ^ inv) & ~hblank & ~vblank;
 assign RGB = {vid, vid, vid, vid, vid, vid, vid, vid};
 assign vidadr = Org + {3'b0, ~vcnt, hword};
 
-always @(posedge clk) begin  // pixel clock
+always @(posedge pclk) begin  // pixel clock domain
   hcnt <= hend ? 0 : hcnt+1;
   vcnt <= hend ? (vend ? 0 : (vcnt+1)) : vcnt;
   hblank <= xfer ? hcnt[10] : hblank;  // hcnt >= 1024
   pixbuf <= xfer ? vidbuf : {1'b0, pixbuf[31:1]};
 end
 
-always @(posedge clk)
-  if (enable) begin  // CPU (SRAM) clock
-    hword <= hcnt[9:5];
-    req <= ~vblank & ~hcnt[10] & (hcnt[5] ^ hword[0]);  // i.e. adr changed
-    vidbuf <= req ? viddata : vidbuf;
-  end
+always @(posedge clk) begin  // CPU (SRAM) clock domain
+  hword <= hcnt[9:5];
+  req <= ~vblank & ~hcnt[10] & (hcnt[5] ^ hword[0]);  // i.e. adr changed
+  vidbuf <= req ? viddata : vidbuf;
+end
+
+// pixel clock generation
+DCM #(.CLKFX_MULTIPLY(3), .CLK_FEEDBACK("NONE"), .CLKIN_PERIOD(40.000))
+  dcm(.CLKIN(clk), .CLKFB(1'b0), .RST(1'b0), .PSEN(1'b0),
+      .PSINCDEC(1'b0), .PSCLK(1'b0), .DSSEN(1'b0), .CLKFX(pclk));
 
 endmodule
