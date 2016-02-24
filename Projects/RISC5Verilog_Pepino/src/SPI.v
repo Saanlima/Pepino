@@ -22,7 +22,7 @@ assign endtick = fast ? (tick == 2) : (tick == 63);  //25MHz clk
 assign endbit = fast ? (bitcnt == 31) : (bitcnt == 7);
 assign dataRx = fast ? shreg : {24'b0, shreg[7:0]};
 assign MOSI = (~rst | rdy) ? 1 : shreg[7];
-assign SCLK = (~rst | rdy) ? 0 : fast ? endtick : tick[5];
+assign SCLK = (~rst | rdy) ? 0 : fast ? tick[1] : tick[5];
 
 always @ (posedge clk) begin
   tick <= (~rst | rdy | endtick) ? 0 : tick + 1;

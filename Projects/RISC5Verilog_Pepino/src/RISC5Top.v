@@ -37,8 +37,6 @@ module RISC5Top(
 // 9  general-purpose I/O tri-state control
 
 reg rst;
-reg wr_enable;
-wire clk, clk2x, pclk;
 wire[23:0] adr;
 wire [3:0] iowadr; // word address
 wire [31:0] inbus, inbus0;  // data to RISC core
@@ -61,6 +59,8 @@ reg [3:0] spiCtrl;
 wire [17:0] vidadr;
 reg [7:0] gpout, gpoc;
 wire [7:0] gpin;
+
+wire wr_enable;
 
 RISC5 riscx(.clk(clk), .rst(rst), .rd(rd), .wr(wr), .ben(ben), .stallX(dspreq),
    .adr(adr), .codebus(inbus0), .inbus(inbus), .outbus(outbus));
@@ -95,7 +95,7 @@ assign SRce0 = ben & adr[1];
 assign SRce1 = ben & ~adr[1];
 assign SRbe0 = ben & adr[0];
 assign SRbe1 = ben & ~adr[0];
-assign SRwe = ~wr_enable;
+assign SRwe = wr_enable;
 assign SRoe = wr;
 assign SRbe = {SRbe1, SRbe0, SRbe1, SRbe0};
 assign SRadr = dspreq ? vidadr : adr[19:2];
@@ -138,11 +138,14 @@ begin
   gpoc <= ~rst ? 0 : (wr & ioenb & (iowadr == 9)) ? outbus[7:0] : gpoc;
 end
 
-DCM #(.CLKFX_MULTIPLY(3), .CLKFX_DIVIDE(2), .CLKDV_DIVIDE(2), .CLKIN_PERIOD(20.000))
-  dcm(.CLKIN(CLK50M), .CLKFB(clk2x), .RST(1'b0), .PSEN(1'b0),
-      .PSINCDEC(1'b0), .PSCLK(1'b0), .DSSEN(1'b0), .CLKFX(pclk), .CLKDV(clk), .CLK0(clk2x));
+DCM #(.CLKFX_MULTIPLY(3), .CLKIN_DIVIDE_BY_2("TRUE"), .CLKIN_PERIOD(20.000))
+  dcm(.CLKIN(CLK50M), .CLKFB(clk), .RST(1'b0), .PSEN(1'b0),
+      .PSINCDEC(1'b0), .PSCLK(1'b0), .DSSEN(1'b0), .CLKFX(pclk), .CLK0(clk),
+      .CLK270(clk270));
 
-always @(negedge clk2x)
-  wr_enable <= wr & ~wr_enable;
+ODDR2 #(.INIT(1'b1))
+  oddr2(.Q(wr_enable), .C0(clk270), .C1(~clk270), .CE(1'b1), .D0(1'b1),
+      .D1(~wr), .R(1'b0), .S(1'b0));
+
       
 endmodule
