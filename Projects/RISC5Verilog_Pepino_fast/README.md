@@ -1,16 +1,13 @@
 Oberon RISC5 for Pepino
 =======================
 
-This is a fast version (37.5 MHz vs. 25 MHz) version of the Oberon RISC5 system. The
-original files can be found at the [Project Oberon page](http://www.projectoberon.com/).
+This is a fast version (37.5 MHz vs. 25 MHz) version of the Oberon RISC5 system. 
 
+The original files can be found at the [Project Oberon page](http://www.projectoberon.com/).
 Original Project Oberon design and source code copyright © 1991–2015 Niklaus Wirth (NW) and Jürg Gutknecht (JG)
 
-Changes
--------
-
-Initial changes made to the original source code are due to the porting process
-itself. Major changes were:
+Changes from the original code
+------------------------------
 
 - Clock generation
   - A PLL is used to generate a 37.5 clock from the 50 MHz board clock
