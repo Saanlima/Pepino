@@ -8,8 +8,8 @@ Original Project Oberon design and source code copyright © 1991–2015 Niklaus Wir
 
 For further information see the [Pepino Wiki page](http://www.saanlima.com/pepino/index.php?title=Welcome_to_Pepino).
 
-Changes from the original code
-------------------------------
+Changes from the 25 MHz Pepino version
+--------------------------------------
 
 - Clock generation
   - A PLL is used to generate a 37.5 clock from the 50 MHz board clock

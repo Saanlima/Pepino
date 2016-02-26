@@ -14,7 +14,7 @@ Changes from the original code
 - Clock generation
   - A DCM is used generated a 25 MHz system clock and a 75 MHz video clock that are in phase
 - The SRAM write signal is genereated using a DDR output buffer
-- The DCM in the video module is removed and replaced with and clock input from the main DCM
+- The DCM in the video module is removed and replaced with a clock input from the main DCM
 - SD card activity LED added
 
 Binaries are available in the ISE folder.
