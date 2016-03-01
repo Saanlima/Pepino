@@ -13,8 +13,8 @@ reg S;
 assign z = P;
 assign stall = run & ~S;
 
-mult_signed (.x(x), .y(y), .z(z_signed));
-mult_unsigned (.x(x), .y(y), .z(z_unsigned));
+mult_signed mult_s(.x(x), .y(y), .z(z_signed));
+mult_unsigned mult_us(.x(x), .y(y), .z(z_unsigned));
 
 always @ (posedge(clk)) begin
   P <= u ? z_unsigned : z_signed;
