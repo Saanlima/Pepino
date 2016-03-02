@@ -75,7 +75,7 @@ VID vid(.clk(clk), .pclk(pclk), .req(dspreq), .inv(swi[7]),
    .vidadr(vidadr), .viddata(inbus0), .RGB(RGB), .hsync(hsync), .vsync(vsync));
 PS2 kbd(.clk(clk), .rst(rst), .done(doneKbd), .rdy(rdyKbd), .shift(),
    .data(dataKbd), .PS2C(PS2C), .PS2D(PS2D));
-MouseP Ms(.clk(clk), .rst(rst), .msclk(msclk), .msdat(msdat), .out(dataMs));
+MouseM Ms(.clk(clk), .rst(rst), .msclk(msclk), .msdat(msdat), .out(dataMs));
 
 assign iowadr = adr[5:2];
 assign ioenb = (adr[23:6] == 18'h3FFFF);
