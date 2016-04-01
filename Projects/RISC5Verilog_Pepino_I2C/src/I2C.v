@@ -27,6 +27,17 @@
 *
 ******************************************************************************/
 
+/*
+This I2C controller is functionally similar to the I2C controller found in 
+NXP LPC176x/5x micro controllers (and close related to the I2C controller found
+in the Atmel AtMega micro controllers).  The main differences are that this 
+controller only implements master mode operation and the bus can only have one 
+master (collisions are not detected).  A detailed description of the LPC176x/5x
+I2C controller and examples of how to use it can be found here:
+http://www.nxp.com/documents/user_manual/UM10360.pdf
+The I2C controller is documented in chapter 19.
+*/
+
 module I2C (
   input clk,
   input rst,
