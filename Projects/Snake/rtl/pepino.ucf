@@ -1,0 +1,25 @@
+NET "*" IOSTANDARD=LVCMOS33;
+CONFIG VCCAUX = "3.3" ;
+
+#50 MHz oscillator
+NET "master_clk"   LOC = J16;
+NET "master_clk"   TNM_NET = "osc";
+TIMESPEC "TS_osc" = PERIOD "osc" 20.000ns;
+
+NET "start"        LOC = G14 | PULLDOWN;
+
+# VGA port
+NET "VGA_hSync"    LOC = D11;
+NET "VGA_vSync"    LOC = E11;
+NET "VGA_R<0>"     LOC = B10;
+NET "VGA_R<1>"     LOC = A10;
+NET "VGA_R<2>"     LOC = C11;
+NET "VGA_G<0>"     LOC = A11;
+NET "VGA_G<1>"     LOC = B12;
+NET "VGA_G<2>"     LOC = A12;
+NET "VGA_B<0>"     LOC = C13;
+NET "VGA_B<1>"     LOC = A13;
+
+# PS/2 keyboard
+NET "KB_clk"       LOC = C9 | PULLUP;
+NET "KB_data"      LOC = A9 | PULLUP;
