@@ -76,17 +76,17 @@ module Snake(start, master_clk, KB_clk, KB_data, VGA_R, VGA_G, VGA_B, VGA_hSync,
           4'b1000: snakeX[0] <= (snakeX[0] + 1);
         endcase
       end else begin
-        // detect if snake head hit the apple
+        // Detect if snake head hit the apple
         if ((snakeX[0] == appleX) && (snakeY[0] == appleY)) begin
           appleX <= rand_X;
           appleY <= rand_Y;
           if (size < 128 - SIZE_INCREASE)
             size <= size + SIZE_INCREASE;
         end
-        // detect if snake head hit border        
+        // Detect if snake head hit border        
         else if ((snakeX[0] == 0) || (snakeX[0] == 79) || (snakeY[0] == 0) || (snakeY[0] == 59))
           game_over <= 1'b1;
-        // detect if snake head hit the snake body
+        // Detect if snake head hit the snake body
         else if (|snakeBody[127:1] && snakeBody[0])
           game_over <= 1'b1;
       end
@@ -105,7 +105,7 @@ module Snake(start, master_clk, KB_clk, KB_data, VGA_R, VGA_G, VGA_B, VGA_hSync,
     apple <= (xCount[9:3] == appleX) && (yCount[9:3] == appleY);
   end
 
-  // Detect of the VGA scanning is hitting the snake head or snake body
+  // Detect if the VGA scanning is hitting the snake head or snake body
   always@(posedge VGA_clk)
   begin
     for(count = 0; count < 128; count = count + 1)
