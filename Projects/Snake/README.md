@@ -4,6 +4,8 @@ Snake game for Pepino
 This is a port of the Snake game first posted at http://www.instructables.com/id/Snake-on-an-FPGA-Verilog/
 
 The keyboard keys W,A,S,D are used to control the direction of the snake.
+DIP switch 0 (the right most switch) is the game start/reset input.
+
 The snake grows by four blocks each time the snake head hits the apple (controlled by parameter)
 
 
