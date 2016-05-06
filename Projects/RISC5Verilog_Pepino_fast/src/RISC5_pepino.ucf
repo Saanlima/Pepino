@@ -1,0 +1,168 @@
+NET "*" IOSTANDARD=LVCMOS33;
+CONFIG VCCAUX = "3.3" ;
+
+NET "CLK50M" LOC = "J16";
+NET "CLK50M" TNM_NET = "osc";
+TIMESPEC "TS_osc" = PERIOD "osc" 20.000ns;
+
+#PIN "dcm.CLK0" TNM = cpu;
+
+NET "TxD" LOC = "B16";
+NET "RxD" LOC = "B15";
+
+NET "btn[0]" LOC = "P5" |PULLDOWN; #IO1N
+NET "btn[1]" LOC = "N6" |PULLDOWN; #IO2N
+NET "btn[2]" LOC = "M7" |PULLDOWN; #IO3N
+NET "btn[3]" LOC = "T8" |PULLDOWN; #IO4N
+NET "swi[0]" LOC = "G14" |PULLDOWN;
+NET "swi[1]" LOC = "G16" |PULLDOWN;
+NET "swi[2]" LOC = "F15" |PULLDOWN;
+NET "swi[3]" LOC = "F16" |PULLDOWN;
+NET "swi[4]" LOC = "E15" |PULLDOWN;
+NET "swi[5]" LOC = "E16" |PULLDOWN;
+NET "swi[6]" LOC = "D14" |PULLDOWN;
+NET "swi[7]" LOC = "D16" |PULLDOWN;
+
+NET "leds[0]" LOC = "N16";
+NET "leds[1]" LOC = "N14";
+NET "leds[2]" LOC = "M14";
+NET "leds[3]" LOC = "M13";
+NET "leds[4]" LOC = "L12";
+NET "leds[5]" LOC = "L13";
+NET "leds[6]" LOC = "L14";
+NET "leds[7]" LOC = "L16";
+
+NET "SDled" LOC = "H13";
+
+# SRAM
+NET "SRce0" LOC = "H4";
+NET "SRce1" LOC = "J4";
+NET "SRwe" LOC = "J1";
+NET "SRoe" LOC = "B6";
+NET "SRbe[0]" LOC = "B3";
+NET "SRbe[1]" LOC = "C3";
+NET "SRbe[2]" LOC = "R1";
+NET "SRbe[3]" LOC = "R2";
+NET "SRadr[0]" LOC = "E3";
+NET "SRadr[1]" LOC = "E4";
+NET "SRadr[2]" LOC = "F3";
+NET "SRadr[3]" LOC = "F4";
+NET "SRadr[4]" LOC = "H3";
+NET "SRadr[5]" LOC = "J3";
+NET "SRadr[6]" LOC = "L4";
+NET "SRadr[7]" LOC = "L5";
+NET "SRadr[8]" LOC = "K1";
+NET "SRadr[9]" LOC = "K2";
+NET "SRadr[10]" LOC = "D5";
+NET "SRadr[11]" LOC = "C5";
+NET "SRadr[12]" LOC = "A4";
+NET "SRadr[13]" LOC = "B5";
+NET "SRadr[14]" LOC = "A5";
+NET "SRadr[15]" LOC = "A6";
+NET "SRadr[16]" LOC = "C7";
+NET "SRadr[17]" LOC = "A7";
+NET "SRadr[18]" LOC = "D6";
+NET "SRdat[0]" LOC = "E1";
+NET "SRdat[1]" LOC = "E2";
+NET "SRdat[2]" LOC = "F1";
+NET "SRdat[3]" LOC = "F2";
+NET "SRdat[4]" LOC = "G1";
+NET "SRdat[5]" LOC = "G3";
+NET "SRdat[6]" LOC = "H1";
+NET "SRdat[7]" LOC = "H2";
+NET "SRdat[8]" LOC = "A3";
+NET "SRdat[9]" LOC = "A2";
+NET "SRdat[10]" LOC = "B1";
+NET "SRdat[11]" LOC = "B2";
+NET "SRdat[12]" LOC = "C1";
+NET "SRdat[13]" LOC = "C2";
+NET "SRdat[14]" LOC = "D1";
+NET "SRdat[15]" LOC = "D3";
+NET "SRdat[16]" LOC = "P4";
+NET "SRdat[17]" LOC = "T4";
+NET "SRdat[18]" LOC = "R5";
+NET "SRdat[19]" LOC = "T5";
+NET "SRdat[20]" LOC = "P6";
+NET "SRdat[21]" LOC = "T6";
+NET "SRdat[22]" LOC = "R7";
+NET "SRdat[23]" LOC = "T7";
+NET "SRdat[24]" LOC = "L1";
+NET "SRdat[25]" LOC = "L3";
+NET "SRdat[26]" LOC = "M1";
+NET "SRdat[27]" LOC = "M2";
+NET "SRdat[28]" LOC = "N1";
+NET "SRdat[29]" LOC = "N3";
+NET "SRdat[30]" LOC = "P1";
+NET "SRdat[31]" LOC = "P2";
+#NET "SRdat[0]" OFFSET = IN 8 ns VALID 10 ns BEFORE clk RISING;
+#NET "SRdat[1]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[2]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[3]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[4]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[5]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[6]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[7]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[8]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[9]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[10]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[11]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[12]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[13]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[14]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[15]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[16]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[17]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[18]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[19]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[20]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[21]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[22]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[23]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[24]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[25]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[26]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[27]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[28]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[29]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[30]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+#NET "SRdat[31]" OFFSET = IN 8 ns VALID 10 ns BEFORE CLK50M RISING;
+# VGA port
+NET "Hsync"  LOC = "D11";
+NET "Vsync"  LOC = "E11";
+NET "RGB[0]" LOC = "B10"; # RED 0
+NET "RGB[1]" LOC = "A10"; # RED 1
+NET "RGB[2]" LOC = "C11"; # RED 2
+NET "RGB[3]" LOC = "A11"; # GREEN 0
+NET "RGB[4]" LOC = "B12"; # GREEN 1
+NET "RGB[5]" LOC = "A12"; # GREEN 2
+NET "RGB[6]" LOC = "C13"; # BLUE 0
+NET "RGB[7]" LOC = "A13"; # BLUE 1
+# PS/2 keyboard
+NET "PS2C" LOC = "C9" |PULLUP;
+NET "PS2D" LOC = "A9" |PULLUP;
+
+# PS/2 mouse
+NET "msclk" LOC = "B8" |PULLUP;
+NET "msdat" LOC = "A8" |PULLUP;
+
+# SPI (SD-Card and Network)
+NET "MOSI[0]" LOC = "F14";
+NET "MOSI[1]" LOC = "D8";
+NET "SCLK[0]" LOC = "F13";
+NET "SCLK[1]" LOC = "D9";
+NET "SS[0]" LOC = "E13";
+NET "SS[1]" LOC = "F9";
+NET "MISO[0]" LOC = "H15" |PULLUP;
+NET "MISO[1]" LOC = "C10" |PULLUP;
+NET "NEN" LOC = "C8";
+
+# general-purpose I/O port
+NET "gpio[0]" LOC = "N5"; #IO1P
+NET "gpio[1]" LOC = "M6"; #IO2P
+NET "gpio[2]" LOC = "P7"; #IO3P
+NET "gpio[3]" LOC = "P8"; #IO4P
+NET "gpio[4]" LOC = "R9"; #IO5P
+NET "gpio[5]" LOC = "M9"; #IO6P
+NET "gpio[6]" LOC = "L10"; #IO7P
+NET "gpio[7]" LOC = "R14"; #IO8P
+
